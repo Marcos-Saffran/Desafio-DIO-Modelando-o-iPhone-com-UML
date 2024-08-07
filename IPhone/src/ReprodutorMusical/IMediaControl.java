@@ -1,4 +1,4 @@
-package Interfaces;
+package ReprodutorMusical;
 
 public interface IMediaControl {
 

@@ -1,28 +1,64 @@
 package IPhone;
 
-import AparelhoTelefonico.AparelhoTelefonico;
-import NavegadorNaInternet.NavegadorNaInternet;
-import ReprodutorMusical.Musica;
-import ReprodutorMusical.ReprodutorMusical;
+import AparelhoTelefonico.IAparelhoTelefonico;
+import NavegadorNaInternet.INavegadorNaInternet;
+import ReprodutorMusical.IMediaControl;
 
-public class IPhone {
+public class IPhone implements IAparelhoTelefonico, INavegadorNaInternet, IMediaControl {
 
-    public static void main(String[] args) {
-        ReprodutorMusical reprodutorMusical = new ReprodutorMusical();
+    @Override
+    public void ligar(String numero) {
+        System.out.println("Ligando do IPhone para: " + numero);
+    }
 
-        Musica musica = new Musica();
-        musica.setTitulo("Musica 1");
+    @Override
+    public void atender() {
+        System.out.println("Atendendo chamada do IPhone ");
+    }
 
-        reprodutorMusical.setMusicaAtual(musica);
+    @Override
+    public void inicarCorreioVoz() {
+        System.out.println("Iniciando correio de voz do IPhone ");
+    }
 
-        reprodutorMusical.tocar();
-        reprodutorMusical.pausar();
-        reprodutorMusical.selecionarMusica(musica.getTitulo());
+    @Override
+    public void exibirPagina(String url) {
+        System.out.println("Exibindo do IPhone página: " + url);
+    }
 
-        AparelhoTelefonico aparelhoTelefonico = new AparelhoTelefonico();
+    @Override
+    public void adicionarAba() {
+        System.out.println("Adicionando do IPhone aba");
+    }
 
-        NavegadorNaInternet navegadorNaInternet = new NavegadorNaInternet();
+    @Override
+    public void atualizarPagina() {
+        System.out.println("Atualizando página do IPhone ");
+    }
 
+    @Override
+    public void tocar() {
+        System.out.println("Tocando músicado IPhone ");
+    }
+
+    @Override
+    public void pausar() {
+        System.out.println("Pausando músicado IPhone ");
+    }
+
+    @Override
+    public void parar() {
+        System.out.println("Parando música do IPhone ");
+    }
+
+    @Override
+    public void aumentarVolume() {
+        System.out.println("Aumentando volume do IPhone ");
+    }
+
+    @Override
+    public void diminuirVolume() {
+        System.out.println("Diminuindo volume do IPhone ");
     }
 
 }

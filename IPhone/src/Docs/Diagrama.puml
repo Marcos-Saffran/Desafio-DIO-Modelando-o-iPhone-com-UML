@@ -1,0 +1,40 @@
+@startuml MyDiagram
+interface INavegadorNaInternet {
+    +void exibirPagina(String url)
+    +void adicionarAba()
+    +void atualizarPagina()
+}
+
+interface IMediaControl {
+    +void tocar()
+    +void pausar()
+    +void aumentarVolume()
+    +void diminuirVolume()
+}
+
+interface IAparelhoTelefonico {
+    +void ligar(String numero)
+    +void atender()
+    +void inicarCorreioVoz()
+}
+
+class IPhone implements INavegadorNaInternet, IMediaControl, IAparelhoTelefonico {
+    +void exibirPagina(String url)
+    +void adicionarAba()
+    +void atualizarPagina()
+    +void tocar()
+    +void pausar()
+    +void parar()
+    +void aumentarVolume()
+    +void diminuirVolume()
+    +void ligar(String numero)
+    +void atender()
+    +void inicarCorreioVoz()
+}
+
+class Fabrica {
+    +void main(String[] args)
+}
+
+Fabrica --> IPhone
+@enduml

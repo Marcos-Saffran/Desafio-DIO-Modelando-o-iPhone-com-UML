@@ -3,7 +3,7 @@ package ReprodutorMusical;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReprodutorMusical {
+public class ReprodutorMusical implements IMediaControl {
 
     private List<ListaPessoal> listasPessoais;
     private List<Artista> artistas;
@@ -17,12 +17,29 @@ public class ReprodutorMusical {
         this.musicaAtual = new Musica();
     }
 
+    @Override
     public void tocar() {
-        this.musicaAtual.tocar();
+        System.out.println("Tocando música " + musicaAtual.getTitulo());
     }
 
+    @Override
     public void pausar() {
-        this.musicaAtual.pausar();
+        System.out.println("Pausando música " + musicaAtual.getTitulo());
+    }
+
+    @Override
+    public void parar() {
+        System.out.println("Parando música " + musicaAtual.getTitulo());
+    }
+
+    @Override
+    public void aumentarVolume() {
+        System.out.println("Aumentando volume da música " + musicaAtual.getTitulo());
+    }
+
+    @Override
+    public void diminuirVolume() {
+        System.out.println("Diminuindo volume da música " + musicaAtual.getTitulo());
     }
 
     public void selecionarMusica(String musica) {
